@@ -16,12 +16,12 @@ public class Pratica {
 			// Show the value of 'x':
 			
 			System.out.println("x = "+x);
-			//What´s the value of 'executar'?
+			//WhatÂ´s the value of 'executar'?
 			System.out.println("executar = "+executar);
 		} else {
 			// Show the value of 'y':
 			System.out.println("y = "+y);
-			//What´s the value of 'executar'?
+			//WhatÂ´s the value of 'executar'?
 			System.out.println("executar = "+executar);
 		}
 		*/
@@ -30,12 +30,12 @@ public class Pratica {
 			// Show the value of 'x':
 			x = x+1;
 			System.out.println("x = "+x);
-			//What´s the value of 'executar'?
+			//WhatÂ´s the value of 'executar'?
 			System.out.println("executar = "+executar);
 		} else {
 			// Show the value of 'y':
 			System.out.println("y = "+y);
-			//What´s the value of 'executar'?
+			//WhatÂ´s the value of 'executar'?
 			System.out.println("executar = "+executar);
 		}
 		*/
