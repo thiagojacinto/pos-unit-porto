@@ -1,4 +1,4 @@
-package animals;
+package entities;
 
 public class Passaro extends Animals{
 	String typeOfbird;

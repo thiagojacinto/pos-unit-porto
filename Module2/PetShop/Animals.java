@@ -1,6 +1,6 @@
-package animals;
+package entities;
 
-public class Animals {
+public abstract class Animals {
 	String nameString, genderString;
 	int age, numberOfPaws;
 	float weight;
@@ -43,6 +43,33 @@ public class Animals {
 		return nameString;
 	}
 	
+	public int getAge() {
+		return age;
+	}
+	
+	public float getWeight() {
+		return weight;
+	}
+	
+	public int getNumberOfPaws() {
+		return numberOfPaws;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public void setGenderString(String genderString) {
+		this.genderString = genderString;
+	}
+	
+	public void setNameString(String nameString) {
+		this.nameString = nameString;
+	}
+	
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
 	// toString() method implementation:
 	@Override
 	public String toString() {

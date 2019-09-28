@@ -2,6 +2,8 @@ package animals;
 
 import java.util.ArrayList;
 
+import entities.Animals;
+
 public class AnimalsCollection {
 	// ATRIBUTTES:
 	ArrayList<Animals> allAnimals = new ArrayList<Animals>();
@@ -47,7 +49,7 @@ public class AnimalsCollection {
 //				System.out.println(animal.nameString);
 //			}
 			// Saturday, September 28
-			System.out.println("["+allAnimals.indexOf(animal)+"]"+ animal.nameString);
+			System.out.println("["+allAnimals.indexOf(animal)+"]"+ animal.getNameString());
 		}
 		System.out.println("--------------------------");
 	}

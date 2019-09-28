@@ -1,4 +1,4 @@
-package animals;
+package entities;
 
 public class Gato extends Animals {
 	String racaString;
