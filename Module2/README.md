@@ -3,7 +3,7 @@
 --- 
 
 ## Description: 
-Java programming language introdution
+Java programming language introdution: basic (attribuition, loops, etc) + object orientation paradigm 
 
 | Module name | Instructor | Date | Grade |
 | :---------- | :--------: | :---: | ----: |
