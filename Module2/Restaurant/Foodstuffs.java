@@ -1,15 +1,15 @@
 package entities;
 
-public abstract class Foodstuffs {
+public class Foodstuffs {
 	// ATTRIBUTES
 	String description, type;
 	float volume, price;
-	
+
 	// METHODS
-	
-	
+
+
 	// Setters and Getters
-	
+
 	public final String getDescription() {
 		return this.description;
 	}
@@ -28,5 +28,4 @@ public abstract class Foodstuffs {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	
 }
