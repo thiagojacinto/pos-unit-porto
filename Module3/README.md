@@ -3,7 +3,7 @@
 --- 
 
 ## Description: 
-Java programming language introdution: basic (attribuition, loops, etc) + object orientation paradigm 
+Java programming language introdution: object orientation paradigm + case study + inheritance, polymorphism, association + window interface in java
 
 | Module name | Instructor | Date | Grade |
 | :---------- | :--------: | :---: | ----: |
