@@ -12,7 +12,7 @@ public abstract class Account {
 	}
 	
 	public Account() {
-		
+		// Empty constructor
 	}
 	
 	// Method to add money into balance
@@ -21,9 +21,12 @@ public abstract class Account {
 	}
 	
 	// Method to remove money into balance
-	public void debit(Double quantity) {
-		setBalance(getBalance() - quantity);
-	}
+//	public void debit(Double quantity) {
+//		setBalance(getBalance() - quantity);
+//	}
+	
+	// Method to remove money into balance -ABSTRACT
+	public abstract void debit(Double value);
 
 	// GETTERS AND SETTERS
 	public String getNumber() {
@@ -40,6 +43,11 @@ public abstract class Account {
 
 	public void setBalance(Double balance) {
 		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Account [number = " + number + ", balance = " + balance + "]\n";
 	}
 	
 }

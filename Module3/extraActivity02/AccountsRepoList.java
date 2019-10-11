@@ -1,15 +1,19 @@
 package extraActivity02;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountsRepoList implements AccountsRepository{
 
 	// ATTRIBUTES
-	List<Account> accList;
-
+	List<Account> accList; 
+	
 	// CONSTRUCTOR
-	AccountsRepoList(){}; // Empty constructor
-
+	AccountsRepoList(){
+		accList = new ArrayList<Account>();
+	}; 
+	
+	
 	@Override
 	public void insert(Account acc) {
 		// TODO Auto-generated method stub
