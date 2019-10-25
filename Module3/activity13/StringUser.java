@@ -33,9 +33,9 @@ public class StringUser {
 		System.out.println("One last time, type another word to compare: ");
 		String fourth = sc.next();
 		
-		System.out.println("Comparing with ´equals´ method: ");
+		System.out.println("Comparing with Â´equalsÂ´ method: ");
 		System.out.println(third.equals(fourth));
-		System.out.println("Then comparing with ´equalsIgnoreCase´ method: ");
+		System.out.println("Then comparing with Â´equalsIgnoreCaseÂ´ method: ");
 		System.out.println(third.equalsIgnoreCase(fourth));
 		
 		System.out.println("Finished, congrats!");
