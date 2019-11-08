@@ -10,15 +10,26 @@ public class Review04 {
 		int x = sc.nextInt();
 		
 		// Verify
+		// Method 1
+		System.out.println("\nMethod 1:\n");
 		if (x % 2 != 0) {		// If its even
 			if (x % 3 == 0) {	// If its multiple of 3
-				System.out.println("Valid nunumber");
+				System.out.println("	> Valid number");
 			} else {
-				System.out.println("NOT valid nunumber");
+				System.out.println("	> NOT valid number");
 			}
 		} else {
-			System.out.println("NOT valid nunumber");
+			System.out.println("	> NOT valid number");
 		}
+		
+		// Method 2
+		System.out.println("\nMethod 2:\n");
+		if (x % 2 != 0 && x % 3 == 0) {	// If its multiple of 3
+			System.out.println("	> Valid number");
+		} else {
+			System.out.println("	> NOT valid number");
+		}
+		
 		sc.close();
 	}
 }
