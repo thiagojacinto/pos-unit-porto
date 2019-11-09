@@ -13,16 +13,17 @@ public class Test {
 		q.insertInQueue(50);
 		
 		// Insert in for
-		for (int i = 72; i < 83; i++) {
+		for (int i = 72; i < 100; i++) {
 			q.insertInQueue(i);
 		}
 
+		
 		// Show queue
 		System.out.println("\nQueue content: ");
 		q.showQueue();
 
 		// Then remove some items
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 30; i++) {
 			q.unQueue();
 		}
 

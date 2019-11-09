@@ -20,17 +20,18 @@ public class Queue {
 	// METHODS
 	
 	// To add
-	public void insertInQueue(int value) {
+	public void insertInQueue(int value) throws RuntimeException {
 		if (!isFull()) {
 			queue[head] = value;
 			head++;
 		} else {
-			System.out.println("Queue is full.");
-		}
+			//System.out.println("Queue is full.");
+			throw new RuntimeException("Queue is full.");
+		} 
 	}
 	
 	// To remove
-	public void unQueue() {
+	public void unQueue() throws RuntimeException {
 		if (!isEmpty()) {
 			for (int i = 1; i <= head; i++) {
 				queue[i-1] = queue[i];
@@ -38,8 +39,14 @@ public class Queue {
 			// The reduce the head identifier
 			head--;
 		} else {
-			System.out.println();
+			// System.out.println("Queue is empty.");
+			throw new RuntimeException("Queue is empty.");
 		}
+	}
+	
+	// To get head
+	public int getHead() {
+		return head;
 	}
 	
 	public boolean isFull() {
