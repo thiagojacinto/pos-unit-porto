@@ -3,7 +3,7 @@
 --- 
 
 ## Description: 
-Data management, Data-base introduction 
+Data management, Data-base introduction: Stack, Queue;
 
 | Module name | Instructor | Date | Grade |
 | :---------- | :--------: | :---: | ----: |
