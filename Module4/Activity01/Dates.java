@@ -2,6 +2,7 @@ package br.unit.module4.activity01;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class Dates {
@@ -10,17 +11,17 @@ public class Dates {
 		
 		Calendar first = Calendar.getInstance();
 		System.out.println("First date = " + sdf.format(first.getTime()));
-		Calendar last = first;
+		Calendar last = new GregorianCalendar();
 		// The modify 'last':
-		last.add(Calendar.DAY_OF_MONTH, 10);
+		last.add(Calendar.DAY_OF_MONTH, 12);
 		last.add(Calendar.MONTH, 3);
 		System.out.println("Last date = " + sdf.format(last.getTime()));
 		// Duration calculation
-		int duration = first.DAY_OF_MONTH - last.DAY_OF_MONTH;
+		int duration = last.get(Calendar.DAY_OF_MONTH) - first.get(Calendar.DAY_OF_MONTH);
 //		int inDays = duration / (1000 * 60 * 60 * 24);
 		System.out.println(
-				"first.millisecs = " + first.DAY_OF_MONTH
-				+ "\nlast.millisecs = " + last.DAY_OF_MONTH
+				"first.DAY = " + first.get(Calendar.DAY_OF_MONTH)
+				+ "\nlast.DAY = " + last.get(Calendar.DAY_OF_MONTH)
 				+ "\nThe difference in DAYS is " + duration + " days."
 				);
 		
