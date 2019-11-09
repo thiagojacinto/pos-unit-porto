@@ -3,6 +3,10 @@ package br.unit.module4.activity01;
 public class Test {
 	public static void main(String[] args) {
 		Stack vector = new Stack();
+		
+		System.out.println("\nIs stack empty? -> " + vector.isEmpty()
+		+ "\n or is it full? -> " + vector.isFull()
+				);
 
 		vector.push(1);
 		System.out.println(vector);
@@ -30,5 +34,8 @@ public class Test {
 		System.out.println("\nIs stack empty? -> " + vector.isEmpty()
 							+ "\n or is it full? -> " + vector.isFull()
 				);
+		
+		System.out.println("\n Show vector items: " );
+		vector.showVector();
 	}
 }

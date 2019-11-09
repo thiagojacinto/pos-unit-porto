@@ -62,6 +62,13 @@ public class Stack {
 		return false;
 	}
 	
+	// Similar to 'toString':
+	public void showVector() {
+		for (int i = 0; i <= top; i++) {
+			System.out.println(vector[i]);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
