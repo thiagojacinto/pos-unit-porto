@@ -26,7 +26,7 @@ The system must be capable of:
 
 | Files| Notes|
 |:-----|:-----| 
-| (Main.java)[/Module3/Project/project.root/Main.java] | Big file with all the application logic. A next step will be separete this using a 'Service' layer. |
+| [Main.java](/Module3/Project/project.root/Main.java) | Big file with all the application logic. A next step will be separete this using a 'Service' layer. |
   
 ## Contributing to 'Library Management System'
 
