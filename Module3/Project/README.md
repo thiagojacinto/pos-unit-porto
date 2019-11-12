@@ -21,6 +21,12 @@ The system must be capable of:
   5. When return the item, the employee register that operation;
   6. If that Return is register in date superior to 15 days after the withdrawal, fees must applicated;
   6. And the user realize the payment of possible fees.
+
+## Files
+
+| Files| Notes|
+|:-----|:-----| 
+| (Main.java)[/Module3/Project/project.root/Main.java] | Big file with all the application logic. A next step will be separete this using a 'Service' layer. |
   
 ## Contributing to 'Library Management System'
 
