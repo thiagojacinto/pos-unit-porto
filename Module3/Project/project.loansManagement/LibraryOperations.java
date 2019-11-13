@@ -1,36 +1,34 @@
-package activity15.loansManagement;
+package project.com.operationsManagement;
 
-import activity15.contentMangement.Collection;
-import activity15.peopleManagement.User;
+import java.util.UUID;
+
+import project.com.contentManagement.Collection;
+import project.com.peopleManagement.Person;
 
 public abstract class LibraryOperations {
 	// ATTRIBUTES
-	private User user;
+	private Person person;
 	private Collection collection;
-	
-	private int type; // 1=Loan, 2=Withdrawal
+	private UUID operationUUID = UUID.randomUUID();		// Randomizes an unique ID for every operation;
+	private int type; // 1=Loan, 2=Withdrawal, 3=Return
 	
 	// CONSTRUCTOR
 	public LibraryOperations() {};
 
-	public LibraryOperations(User user,Collection repo) {
-		this.user = user;
+	public LibraryOperations(Person person,Collection repo) {
+		this.person = person;
 		this.collection = repo;
-		
 	}
 	
-	// METHODS
-	
-	public abstract void register();
 	
 	// GETTERS AND SETTERS
 
-	public User getUser() {
-		return user;
+	public Person getPerson() {
+		return person;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 
 	public Collection getCollection() {
@@ -48,5 +46,10 @@ public abstract class LibraryOperations {
 	public void setType(int type) {
 		this.type = type;
 	}
+	
+	public UUID getOperationUUID() {
+		return operationUUID;
+	}
+	
 	
 }

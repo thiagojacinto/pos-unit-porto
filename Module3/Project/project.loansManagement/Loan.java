@@ -1,22 +1,23 @@
-package activity15.loansManagement;
+package project.com.operationsManagement;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
-import activity15.contentMangement.Collection;
-import activity15.peopleManagement.User;
+import project.com.contentManagement.Collection;
+import project.com.peopleManagement.Person;
 
 public class Loan extends LibraryOperations {
 	// ATTRIBUTES
-	Date date;
-	Boolean status = false;
+	private Calendar date;
+	private Boolean withdrawStatus = false;
 	
 	// CONSTRUCTOR
 	public Loan() {
 		this.setType(1);	// Type of loan
 	};
 	
-	public Loan(User user,Collection repo, Date date) {
-		super(user, repo);
+	public Loan(Person user, Collection item, Calendar date) {
+		super(user, item);
 		this.date = date;
 		this.setType(1);	// Type of loan
 	}
@@ -24,27 +25,31 @@ public class Loan extends LibraryOperations {
 	// GETTERS AND SETTERS
 	
 	public Boolean getStatus() {
-		return status;
+		return withdrawStatus;
 	}
 
 	public void setStatus(Boolean status) {
-		this.status = status;
+		this.withdrawStatus = status;
 	}
 	
-	public Date getDate() {
+	public Calendar getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void Calendar (Calendar date) {
 		this.date = date;
 	}
-		
-	// METHODS
-	
+
+
 	@Override
-	public void register() {
-		// TODO Auto-generated method stub
+	public String toString() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");	// Format exhibition of Calendar instances
 		
+		return "[Loan date = " + sdf.format(date.getTime())
+				+ ", Status = " + withdrawStatus 
+				+ ", User = " + getPerson() 
+				+ ", Operation type = " + getType()
+				+ ", UniqueID = " + getOperationUUID() 
+				+ " ]\n";
 	}
-	
 }
