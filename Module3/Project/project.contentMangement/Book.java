@@ -1,13 +1,12 @@
-package activity15.contentMangement;
+package project.com.contentManagement;
 
 import java.util.List;
-import activity15.contentMangement.CollectionsRepo;
-import activity15.loansManagement.CommonMethods;
 
 
-public class Book extends Collection implements CommonMethods {
+public class Book extends Collection {
 	// ATTRIBUTES
-	private String title ;
+//	private String title ; 	// Added to superclass
+	private String author;
 	private String editor;
 	private String subject;
 	private int ISBN;
@@ -22,32 +21,18 @@ public class Book extends Collection implements CommonMethods {
 	
 	public Book(int c, String title, int pubY) {
 		super(c,pubY);
-		this.title = title;
+		super.setTitle(title);
 		this.setType(1);
 	}
 	
-	// METHODS
+	// GETTERS AND SETTERS
 	
-	@Override
-	public void register() {
-		// TODO Auto-generated method stub
-		repo.insert(this);
-	}
-
-	@Override
-	public void erase() {
-		// TODO Auto-generated method stub
-		repo.remove(this.getCode());
+	public String getAuthor() {
+		return author;
 	}
 	
-	// GETTERS AND SETTERS:
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public String getEditor() {

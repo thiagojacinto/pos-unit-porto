@@ -1,13 +1,15 @@
-package activity15.contentMangement;
+package project.com.contentManagement;
 
 abstract public class Collection {
 	
 	// ATTRIBUTES
+	private String title;
 	private int code;
 	private int publicationYear;
 	private String volume;
 	private int numPages;
 	private int type; // 1=Book, 2=Newspaper, 3=Mag
+	private int quantity;
 	
 	// CONSTRUCTOR
 	public Collection() {};
@@ -18,6 +20,14 @@ abstract public class Collection {
 	}
 
 	// GETTERS AND SETTERS
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	
 	public int getCode() {
 		return code;
@@ -56,15 +66,23 @@ abstract public class Collection {
 	public int getType() {
 		return type;
 	}
-
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
 	// toString
 	@Override
 	public String toString() {
-		return "Collection [type = " + type 
-				+ ", code=" + code 
-				+ ", publicationYear=" + publicationYear 
-				+ ", volume=" + volume
-				+ ", numPages=" + numPages + "]";
+		return "[ type = " + this.getClass().getSimpleName() 
+				+ ", title = " + title
+				+ ", code = " + code 
+				+ ", publicationYear = " + publicationYear 
+				+ ", volume = " + volume
+				+ ", numPages = " + numPages 
+				+ ", quantity = " + quantity + "]\n";
 	}
 	
 	

@@ -1,12 +1,10 @@
-package activity15.contentMangement;
+package project.com.contentManagement;
 
 import java.util.List;
 
-import activity15.loansManagement.CommonMethods;
-
-public class Newspaper extends Collection implements CommonMethods{
+public class Newspaper extends Collection {
 	// ATTRIBUTES
-	private String nameNP;
+//	private String nameNP;	// Passed to superclass as 'title'
 	private RepositoryOfCollections repo = new CollectionsRepo();
 	
 	// CONSTRUCTOR
@@ -20,32 +18,19 @@ public class Newspaper extends Collection implements CommonMethods{
 	public Newspaper(int c, int y, String n) {
 		super(c, y);
 		// TODO Auto-generated constructor stub
-		this.setName(n);
+		super.setTitle(n);
 		this.setType(2);
 	}
 	
 	// GETTERS AND SETTERS
 	
-	public String getName() {
-		return nameNP;
-	}
-	public void setName(String nameNP) {
-		this.nameNP = nameNP;
-	}
+//	public String getName() {
+//		return nameNP;
+//	}
+//	public void setName(String nameNP) {
+//		this.nameNP = nameNP;
+//	}
 	
-	// METHOD
-	
-	@Override
-	public void register() {
-		// TODO Auto-generated method stub
-		repo.insert(this);
-	}
-
-	@Override
-	public void erase() {
-		// TODO Auto-generated method stub
-		repo.remove(this.getCode());
-	}
 	// Repository connection
 	public RepositoryOfCollections getRepo() {
 		return repo;

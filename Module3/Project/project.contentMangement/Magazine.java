@@ -1,11 +1,10 @@
-package activity15.contentMangement;
+package project.com.contentManagement;
 
 import java.util.List;
-import activity15.loansManagement.CommonMethods;
 
-public class Magazine extends Collection implements CommonMethods{
+public class Magazine extends Collection {
 	// ATTRIBUTES
-	private String name;
+//	private String name;	// Passed to superclass as 'title'
 	private RepositoryOfCollections repo = new CollectionsRepo();
 
 	// CONSTRUCTOR
@@ -19,31 +18,13 @@ public class Magazine extends Collection implements CommonMethods{
 	public Magazine(int c, int y, String n) {
 		super(c, y);
 		// TODO Auto-generated constructor stub
-		this.setName(n);
+//		this.setName(n);
+		super.setTitle(n);
 		this.setType(3);
 	}
 	
 	// GETTERS AND SETTERS
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	// METHODS
-	@Override
-	public void register() {
-		// TODO Auto-generated method stub
-		repo.insert(this);
-	}
-
-	@Override
-	public void erase() {
-		// TODO Auto-generated method stub
-		repo.remove(this.getCode());
-	}
 
 	// Repository connection
 	public RepositoryOfCollections getRepo() {

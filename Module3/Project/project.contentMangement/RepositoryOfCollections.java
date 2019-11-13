@@ -1,4 +1,4 @@
-package activity15.contentMangement;
+package project.com.contentManagement;
 
 public interface RepositoryOfCollections {
 	// METHODS
@@ -6,7 +6,7 @@ public interface RepositoryOfCollections {
 	// Insert
 	public void insert(Collection col);
 	// Search
-	public Collection search(Collection col);
+	public Collection search(int code);
 	// Remove
 	public void remove(int code);
 	// List
