@@ -1,8 +1,6 @@
-package activity15.peopleManagement;
+package project.com.peopleManagement;
 
-import activity15.loansManagement.CommonMethods;
-
-public class Employee extends Person implements CommonMethods{
+public class Employee extends Person {
 	// ATTRIBUTES
 	private RepositoryOfPersons repo = new PersonRepo();
 	
@@ -19,20 +17,6 @@ public class Employee extends Person implements CommonMethods{
 		this.setType(2);
 	}
 	
-	// METHODS
-	
-	@Override
-	public void register() {
-		// TODO Auto-generated method stub
-		repo.insert(this);
-	}
-
-	@Override
-	public void erase() {
-		// TODO Auto-generated method stub
-		repo.remove(this.getCode());
-	}
-	
 	// Repository connection
 	public RepositoryOfPersons getRepo() {
 		return repo;
@@ -41,15 +25,10 @@ public class Employee extends Person implements CommonMethods{
 		this.repo = repo;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Employee [repo=" + repo + "]";
-//	}
-
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString() + "Employee";
+		return super.toString();
 	}
 	
 	

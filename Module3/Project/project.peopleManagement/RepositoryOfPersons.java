@@ -1,4 +1,4 @@
-package activity15.peopleManagement;
+package project.com.peopleManagement;
 
 public interface RepositoryOfPersons {
 	// METHODS

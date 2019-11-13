@@ -1,6 +1,6 @@
-package activity15.peopleManagement;
+package project.com.peopleManagement;
 
-abstract class Person {
+public abstract class Person {
 	private String name;
 	private int code;
 	private int type; // 1-User, 2-Employee
@@ -38,7 +38,7 @@ abstract class Person {
 
 	@Override
 	public String toString() {
-		return "[type = "+ type  + ", name = " + name + ", code = " + code + "]\n";
+		return "[type = "+ this.getClass().getSimpleName()  + ", name = " + name + ", code = " + code + "]\n";
 	}
 
 }

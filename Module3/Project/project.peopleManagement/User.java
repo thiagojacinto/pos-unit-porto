@@ -1,10 +1,8 @@
-package activity15.peopleManagement;
+package project.com.peopleManagement;
 
 import java.util.List;
 
-import activity15.loansManagement.CommonMethods;
-
-public class User extends Person implements CommonMethods{
+public class User extends Person {
 	
 	// ATTRIBUTES
 	private String cpf;
@@ -27,19 +25,6 @@ public class User extends Person implements CommonMethods{
 		super(n, c);
 		this.setType(1);
 		// TODO Auto-generated constructor stub
-	}
-	
-	// METHODS
-
-	@Override
-	public void register() {
-		// TODO Auto-generated method stub
-		repo.insert(this);
-	}
-	@Override
-	public void erase() {
-		// TODO Auto-generated method stub
-		repo.remove(this.getCode());
 	}
 	
 	// GETTERS AND SETTERS
