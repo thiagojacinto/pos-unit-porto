@@ -3,7 +3,7 @@
 --- 
 
 ## Description: 
-Data management, Data-base introduction: basic implementation of Stack, Queue, List;
+Data management, Data-base introduction: basic implementation of Stack, Queue, List; Basic implementation of sort algorithms: Bubble Sort;
 
 | Module name | Instructor | Date | Grade |
 | :---------- | :--------: | :---: | ----: |
