@@ -3,6 +3,7 @@ package br.unit.module4.activity06;
 public class BubbleSort {
 	// ATTRIBUTES
 	private int[] vector;
+	private int changes = 0;
 
 	// CONSTRUCTOR
 	public BubbleSort(int[] vector) {
@@ -28,6 +29,8 @@ public class BubbleSort {
 					// then put them inside 'vector'
 					vector[j-1] = v1;
 					vector[j] = v2;
+					// add one change
+					changes++;
 				}
 			}
 		}
@@ -47,5 +50,9 @@ public class BubbleSort {
 
 	public int[] getVector() {
 		return vector;
+	}
+	
+	public int getChanges() {
+		return changes;
 	}
 }
