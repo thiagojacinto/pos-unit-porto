@@ -21,7 +21,7 @@ public class InsertionSort {
 			int j = i - 1;
 			int key = vector[i];
 			
-			while ((j >= 0) && (vector[j] >= key)) {
+			while ((j >= 0) && (vector[j] > key)) {
 				vector[j + 1] = vector[j];
 				j--;
 			}
