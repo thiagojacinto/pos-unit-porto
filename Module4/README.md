@@ -7,4 +7,4 @@ Data management, Data-base introduction: basic implementation of Stack, Queue, L
 
 | Module name | Instructor | Date | Grade |
 | :---------- | :--------: | :---: | ----: |
-| Laboratório de Programação 3 | *Endrigo* | November, 2019 | N.I. |
+| Laboratório de Programação 3 | *Sérgio Endrigo* | November, 2019 | N.I. |
