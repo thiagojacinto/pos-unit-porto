@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class InsertionSort {
 	// ATTRIBUTES
-	int[] vector;
+	private int[] vector;
+	private int changes = 0;
 	
 	// CONSTRUCTOR
 	public InsertionSort(int[] array) {
@@ -24,6 +25,7 @@ public class InsertionSort {
 			while ((j >= 0) && (vector[j] > key)) {
 				vector[j + 1] = vector[j];
 				j--;
+				changes++;
 			}
 			vector[j + 1] = key;
 		}
@@ -47,6 +49,9 @@ public class InsertionSort {
 	
 	public int[] getVector() {
 		return vector;
+	}
+	public int getChanges() {
+		return changes;
 	}
 
 	@Override
