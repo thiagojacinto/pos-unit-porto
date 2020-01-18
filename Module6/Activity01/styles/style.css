@@ -1,0 +1,9 @@
+.even {
+	color: gray;
+	text-decoration: blink;
+}
+
+.odd {
+	color: blue;
+	text-decoration: none;
+}
