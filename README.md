@@ -19,3 +19,4 @@ Codes and resources from post-grad course at UNIT / Porto Digital
 | 4. [Progamação III](/Module4/) | Data management, Data-base introduction: basic implementation of Stack, Queue, List; Basic implementation of sort algorithms: Bubble Sort; | November, 2019 |
 | 5. [Laboratório de Progamação I](/Module5/) | Hackathon-styled module with a proposition of a problem and the development of a solution to it. An app was developed into a webapp. called [#VagaLivre](https://github.com/thiagojacinto/vagalivre-web) that finds parking spot near the user location, showing parking spot numbers. | December, 2019 |
 | 6. [Programação para Web](/Module6/) | Web design introduciton: HTML & CSS fundation with a little overview of Javascript. | January, 2020 |
+| 7. [Programação para Dispositivos Móveis I & II](/Module7/) | Introduction to mobile development with Android Studio & Java | February, 2020 |
