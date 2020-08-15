@@ -7,6 +7,11 @@ public class Desafio02 {
 	private final String padrao = "##,###0.0#";
 	private DecimalFormat formato = new DecimalFormat(padrao);
 	
+	/**
+	 * Calcula a sequencia de números a partir de um {@code Double} número de entrada.
+	 * @param numero {@code Double}
+	 * @return {@code Double} o resultado do cálculo da sequência.
+	 */
 	private Double calcularSequencia(Double numero) {
 		
 		Double resultado = 0d;
@@ -18,6 +23,10 @@ public class Desafio02 {
 		return resultado;
 	}
 	
+	/**
+	 * Exibe no console a sequência de números a partir da entrada de um {@code Double} número.
+	 * @param numero {@code Double}
+	 */
 	public void exibirSequencia(Double numero) {
 		formato.setMaximumFractionDigits(13);
 		System.out.println(
