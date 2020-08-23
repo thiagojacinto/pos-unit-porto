@@ -5,12 +5,12 @@
 
 Logic overview, Logic 101
 
-| Module name | Instructor | Date | Grade |
-| :---------- | :--------: | :---: | ----: |
-| Bootcamp 01 | *Tito Kenzo* | August, 2020 | N.I. |
+| Module name |  Instructor  |     Date     | Grade |
+| :---------- | :----------: | :----------: | ----: |
+| Bootcamp 01 | *Tito Kenzo* | August, 2020 |  N.I. |
 
 ## Structure:
-
+### Desafios: Lógica
 * [desafio01/](./desafios-logica/desafio01)
   * [Desafio01.java](./desafios-logica/desafio01/Desafio01.java)
   * [Principal.java](./desafios-logica/desafio01/Principal.java)
@@ -35,3 +35,63 @@ Logic overview, Logic 101
 * [desafio08/](./desafios-logica/desafio08)
   * [Desafio08.java](./desafios-logica/desafio08/Desafio08.java)
   * [Principal.java](./desafios-logica/desafio08/Principal.java)
+
+### Desafios: Orientação a objetos
+
+* [desafio01/](./desafios-poo/desafio01)
+  * [Transporte.java](./desafios-poo/desafio01/Transporte.java)
+* [desafio02/](./desafios-poo/desafio02)
+  * [Produto.java](./desafios-poo/desafio02/Produto.java)
+* [desafio03/](./desafios-poo/desafio03)
+  * [MeioDeTransporte.java](./desafios-poo/desafio03/MeioDeTransporte.java)
+  * [Terrestre.java](./desafios-poo/desafio03/Terrestre.java)
+* [desafio04/](./desafios-poo/desafio04)
+  * [Alimento.java](./desafios-poo/desafio04/Alimento.java)
+  * [Ferramenta.java](./desafios-poo/desafio04/Ferramenta.java)
+  * [ItemDeLoja.java](./desafios-poo/desafio04/ItemDeLoja.java)
+* [desafio05/](./desafios-poo/desafio05)
+  * [Aluno.java](./desafios-poo/desafio05/Aluno.java)
+  * [Turma.java](./desafios-poo/desafio05/Turma.java)
+* [desafio06/](./desafios-poo/desafio06)
+  * [Dependente.java](./desafios-poo/desafio06/Dependente.java)
+  * [Funcionario.java](./desafios-poo/desafio06/Funcionario.java)
+* [desafio07/](./desafios-poo/desafio07)
+  * [Carro.java](./desafios-poo/desafio07/Carro.java)
+  * [Item.java](./desafios-poo/desafio07/Item.java)
+  * [Modelo.java](./desafios-poo/desafio07/Modelo.java)
+* [desafio08/](./desafios-poo/desafio08)
+  * [Dados.java](./desafios-poo/desafio08/Dados.java)
+* [desafio09/](./desafios-poo/desafio09)
+  * [Adocao.java](./desafios-poo/desafio09/Adocao.java)
+  * [Adotante.java](./desafios-poo/desafio09/Adotante.java)
+  * [Animal.java](./desafios-poo/desafio09/Animal.java)
+  * [Endereco.java](./desafios-poo/desafio09/Endereco.java)
+  * [PessoaFisica.java](./desafios-poo/desafio09/PessoaFisica.java)
+  * [PessoaJuridica.java](./desafios-poo/desafio09/PessoaJuridica.java)
+  * [Raca.java](./desafios-poo/desafio09/Raca.java)
+  * [Usuario.java](./desafios-poo/desafio09/Usuario.java)
+* [desafio10/](./desafios-poo/desafio10)
+  * [Cliente.java](./desafios-poo/desafio10/Cliente.java)
+  * [Conexao.java](./desafios-poo/desafio10/Conexao.java)
+  * [ConexaoImpl.java](./desafios-poo/desafio10/ConexaoImpl.java)
+  * [DaoCliente.java](./desafios-poo/desafio10/DaoCliente.java)
+  * [DaoClienteImpl.java](./desafios-poo/desafio10/DaoClienteImpl.java)
+  * [Teste.java](./desafios-poo/desafio10/Teste.java)
+* [desafio11/](./desafios-poo/desafio11)
+  * [Candidato.java](./desafios-poo/desafio11/Candidato.java)
+  * [Casa.java](./desafios-poo/desafio11/Casa.java)
+  * [Eleitor.java](./desafios-poo/desafio11/Eleitor.java)
+  * [Partido.java](./desafios-poo/desafio11/Partido.java)
+  * [Pessoa.java](./desafios-poo/desafio11/Pessoa.java)
+  * [Resultado.java](./desafios-poo/desafio11/Resultado.java)
+  * [ServidorDeVotos.java](./desafios-poo/desafio11/ServidorDeVotos.java)
+  * [TER.java](./desafios-poo/desafio11/TER.java)
+  * [Votar.java](./desafios-poo/desafio11/Votar.java)
+  * [ZonaEleitoral.java](./desafios-poo/desafio11/ZonaEleitoral.java)
+* [desafio12/](./desafios-poo/desafio12)
+  * [Radio.java](./desafios-poo/desafio12/Radio.java)
+  * [RadioRelogio.java](./desafios-poo/desafio12/RadioRelogio.java)
+  * [Relogio.java](./desafios-poo/desafio12/Relogio.java)
+  * [RelogioImpl.java](./desafios-poo/desafio12/RelogioImpl.java)
+  * [RelogioPulso.java](./desafios-poo/desafio12/RelogioPulso.java)
+  * [Teste.java](./desafios-poo/desafio12/Teste.java)
