@@ -7,7 +7,20 @@ public class Dependente {
 	private Integer sexo;
 	private String dataDeNascimento;
 	private boolean participaPlano;
+	private Funcionario funcionario;
 	
+	/**
+	 * @return the funcionario
+	 */
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+	/**
+	 * @param funcionario the funcionario to set
+	 */
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
 	/**
 	 * @return the sequencial
 	 */
