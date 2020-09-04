@@ -20,3 +20,5 @@ Codes and resources from post-grad course at UNIT / Porto Digital
 | 5. [Laboratório de Progamação I](/Module5/) | Hackathon-styled module with a proposition of a problem and the development of a solution to it. An app was developed into a webapp. called [#VagaLivre](https://github.com/thiagojacinto/vagalivre-web) that finds parking spot near the user location, showing parking spot numbers. | December, 2019 |
 | 6. [Programação para Web](/Module6/) | Web design introduciton: HTML & CSS fundation with a little overview of Javascript. Final project: [Carnavalizar](https://github.com/thiagojacinto/bootstrap-review-project-2020) | January, 2020 |
 | 7. [Programação para Dispositivos Móveis I & II](/Module7/) | Introduction to mobile development with Android Studio & Java. Final project: [Pomodoro Timer App](https://github.com/thiagojacinto/pomodoro-java-android-app) | February, 2020 |
+| - | _*Coronavirus outbreak*_ | March until July, 2020|
+| 9. [Bootcamp: Lógica e Princípios da Orientação a Objetos](/Bootcamp1) | Java OOP principles | August, 2020|
