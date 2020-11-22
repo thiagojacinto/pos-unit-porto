@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinhe um número</title>
+    <style>
+      body,
+      a,
+      fieldset,
+      form,
+      p,
+      span {
+        padding: 0;
+        margin: 0;
+        border-style: none;
+        text-decoration: none;
+      }
+
+      html,
+      body {
+        font-family: "Karla", sans-serif;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      main {
+        max-width: 90vw;
+        min-height: 50vh;
+        height: 65%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 5% 15%;
+      }
+
+      form {
+        width: 100%;
+        padding: 1.8rem 0;
+      }
+
+      form fieldset {
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      form input {
+        min-width: 30%;
+      }
+
+      button {
+        font-family: "Karla", sans-serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+      .content {
+        font-size: 1.3rem;
+        text-align: justify;
+      }
+
+      .sugestoes {
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .sugestoes > * {
+        margin-bottom: 1.05rem;
+      }
+
+      .verificacao {
+        font-weight: 700;
+        padding: 1.05rem;
+        border-radius: 15px;
+        background-color: rgb(252, 86, 86);
+      }
+
+      .sucesso {
+        background-color: rgb(165, 214, 2);
+      }
+
+      /* 
+Background CSS Animation 
+Source: https://www.gradient-animator.com/
+*/
+      .efeito-gradiente {
+        background: linear-gradient(303deg, #ddf688, #f6d588, #bc9ffc);
+
+        -webkit-animation: gradient 20s ease-in-out infinite;
+        -moz-animation: gradient 20s ease-in-out infinite;
+        animation: gradient 20s ease-in-out infinite;
+      }
+
+      @-webkit-keyframes gradient {
+        0% {
+          background-position: 91% 0%;
+        }
+        50% {
+          background-position: 10% 100%;
+        }
+        100% {
+          background-position: 91% 0%;
+        }
+      }
+      @-moz-keyframes gradient {
+        0% {
+          background-position: 91% 0%;
+        }
+        50% {
+          background-position: 10% 100%;
+        }
+        100% {
+          background-position: 91% 0%;
+        }
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 91% 0%;
+        }
+        50% {
+          background-position: 10% 100%;
+        }
+        100% {
+          background-position: 91% 0%;
+        }
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAvLy8AP///wC1tbUAf39/AIAAAQC7u7sAurq6AOYBAAD+AAAAwMDAAHeKiwC5ubkA/Pz8ALKysgCJiYkAPz8/AMXFxQCBgYEAxMTEAICAgAAB/wAAhZeUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoKCgoKCgoKCgoKFAAAAAAKFQoKCgoAAAAAChQUAAAACgoKCgoKCgoKCgoUFAAAABQEBAQEBAQEBAQSFBQAAAAMExERERERERERDxQUAAAABgoFBQUFBQUFAhQAAAAAAAEKCQkJAAAACQIUAAAAAAAOCgkWDQICAAkCFAAAAAAAAwoJCwICCAkJAhQAAAAAAAcKCQkJCQkJCQIUAAAAAAAGChAQEBAQEBACFAAAAAAAAAICAgICAgICAhQAAAAAAAAACgoKCgoKCgoAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADABwAAwAMAAMABAADAAQAAwAEAAMABAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADgAwAA8AsAAP//AAA="
+      rel="icon"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="efeito-gradiente">
+    <main>
+      <h1>Jogo: advinhe um número</h1>
+
+      <div class="content">
+        <p class="descricao">
+          Um número aleatório entre 1 e 100 foi escolhido. Você consegue
+          adivinhá-lo em 10 chances ou menos? Tente e será informado se seu
+          palpite está quente ou frio...
+        </p>
+
+        <form action="POST" autocomplete="off">
+          <fieldset>
+            <label for="input__palpite">Digite seu palpite:</label>
+            <input type="text" name="input__palpite" id="input__palpite" />
+            <button>Enviar</button>
+          </fieldset>
+        </form>
+
+        <div class="sugestoes" style="display: none">
+          <p class="palpites">Palpites anteriores: </p>
+
+          <p class="verificacao"></p>
+
+          <span class="ajuda"></span>
+
+          <button id="btn__reset" disabled="disabled">Reiniciar jogo</button>
+        </div>
+      </div>
+    </main>
+    <script defer>
+      const PALPITES_ANTERIORES = "Palpites anteriores: ";
+      const TENTATIVA_ERRADA = "Errado!";
+      const TENTATIVA_CERTA = "Parabéns! Seu número está certo!";
+      const PALPITE_BAIXO = "Seu palpite está muito baixo!";
+      const PALPITE_ALTO = "Seu palpite está muito alto!";
+      const FINAL_SEM_TENTATIVAS =
+        "Tentativas esgotadas :( Mais sorte na próxima!";
+      const CONTEUDO_VAZIO = " ";
+
+      let min = 1;
+      let max = 100;
+
+      function gerarNumero() {
+        return Math.floor(Math.random() * 99 + 1);
+      }
+
+      console.assert(
+        typeof gerarNumero() === "number",
+        "gerarNumero() deve retornar um número"
+      );
+
+      let numero = gerarNumero();
+      let listaDePalpites = [];
+      let tentativas = 0;
+
+      const botaoSubmeterPalpite = document.querySelector("fieldset button");
+      const campoPalpite = document.getElementById("input__palpite");
+      const sugestoes = document.querySelector(".sugestoes");
+      const palpites = document.querySelector(".palpites");
+      const verificacao = document.querySelector(".verificacao");
+      const ajuda = document.querySelector(".ajuda");
+      const botaoResetar = document.getElementById("btn__reset");
+
+      /**
+       * Retorna o valor do palpite
+       * @param {HTMLFormEvent} event
+       */
+      function salvarPalpite() {
+        const palpite = Number(campoPalpite.value);
+        campoPalpite.value = "";
+        return palpite;
+      }
+
+      botaoSubmeterPalpite.addEventListener("click", (event) => {
+        jogar(event);
+      });
+
+      function jogar(event) {
+        event.preventDefault();
+        const palpite = salvarPalpite();
+        try {
+          if (listaDePalpites.length === 0) ativarCampos();
+          verificarPalpite(palpite);
+        } catch (error) {
+          finalizarJogo(false);
+        }
+      }
+      function ativarCampos() {
+        sugestoes.removeAttribute("style");
+      }
+
+      function limparListaDePalpites() {
+        listaDePalpites = [];
+        palpites.textContent = PALPITES_ANTERIORES;
+      }
+
+      function verificarPalpite(palpite) {
+        if (listaDePalpites.length > 9) {
+          return finalizarJogo(false);
+        }
+        atualizarMinMax(palpite);
+        listaDePalpites.push(palpite);
+        palpites.textContent += `${palpite} `;
+
+        if (palpite === numero) {
+          return finalizarJogo(true);
+        }
+        continuarJogo(palpite);
+      }
+
+      function continuarJogo(palpite) {
+        verificacao.textContent = TENTATIVA_ERRADA;
+        if (palpite > numero) {
+          ajuda.textContent = PALPITE_ALTO.concat(` O número escolhido está entre ${min} e ${max}.`);
+          return;
+        }
+        ajuda.textContent = PALPITE_BAIXO.concat(` O número escolhido está entre ${min} e ${max}.`);
+      }
+
+      function finalizarJogo(ganhou = true) {
+        verificacao.textContent = ganhou
+          ? TENTATIVA_CERTA
+          : FINAL_SEM_TENTATIVAS;
+        ajuda.textContent = CONTEUDO_VAZIO;
+        campoPalpite.setAttribute("disabled", "disabled");
+        botaoSubmeterPalpite.setAttribute("disabled", "disabled");
+        ganhou && verificacao.classList.add("sucesso");
+        botaoResetar.removeAttribute("disabled");
+        botaoResetar.addEventListener("click", (event) => {
+          event.preventDefault();
+          reiniciarJogo();
+        });
+      }
+
+      function reiniciarJogo() {
+        tentativas++;
+        min = 1;
+        max = 100
+        numero = gerarNumero();
+        limparListaDePalpites();
+        verificacao.classList.remove("sucesso");
+        campoPalpite.removeAttribute("disabled");
+        botaoSubmeterPalpite.removeAttribute("disabled");
+        sugestoes.setAttribute("style", "display:none;");
+        botaoResetar.setAttribute("disabled", "");
+      }
+
+      function atualizarMinMax(palpite) {
+        
+        if (palpite < numero && palpite > min) {
+          min = palpite;
+        } else if (palpite > numero && palpite < max) {
+          max = palpite;
+        }
+      }
+    </script>
+  </body>
+</html>
