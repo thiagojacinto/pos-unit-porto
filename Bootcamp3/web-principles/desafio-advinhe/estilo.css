@@ -1,0 +1,126 @@
+body,
+a,
+fieldset,
+form,
+p,
+span {
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  font-family: "Karla", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  max-width: 90vw;
+  min-height: 50vh;
+  height: 65%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 5% 15%;
+}
+
+form {
+  width: 100%;
+  padding: 1.8rem 0;
+}
+
+form fieldset {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+form input {
+  min-width: 30%;
+}
+
+button {
+  font-family: "Karla", sans-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.content {
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+.sugestoes {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sugestoes > * {
+  margin-bottom: 1.05rem;
+}
+
+.verificacao {
+  font-weight: 700;
+  padding: 1.05rem;
+  border-radius: 15px;
+  background-color: rgb(252, 86, 86);
+}
+
+.sucesso {
+  background-color: rgb(165, 214, 2);
+}
+
+/* 
+Background CSS Animation 
+Source: https://www.gradient-animator.com/
+*/
+.efeito-gradiente {
+  background: linear-gradient(303deg, #ddf688, #f6d588, #bc9ffc);
+  
+  -webkit-animation: gradient 20s ease-in-out infinite;
+  -moz-animation: gradient 20s ease-in-out infinite;
+  animation: gradient 20s ease-in-out infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 91% 0%;
+  }
+  50% {
+    background-position: 10% 100%;
+  }
+  100% {
+    background-position: 91% 0%;
+  }
+}
+@-moz-keyframes gradient {
+  0% {
+    background-position: 91% 0%;
+  }
+  50% {
+    background-position: 10% 100%;
+  }
+  100% {
+    background-position: 91% 0%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 91% 0%;
+  }
+  50% {
+    background-position: 10% 100%;
+  }
+  100% {
+    background-position: 91% 0%;
+  }
+}
