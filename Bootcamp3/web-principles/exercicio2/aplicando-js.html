@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Exemplo aplicando JavaScript</title>
+</head>
+<body>
+  <button id="btn__add">Clique em mim</button>
+  <button id="btn__remove">Remover</button>
+
+  <script>
+    // Código JavaScript
+    const criarParagrafo = () => {
+      let paragrafo = document.createElement("p");
+      paragrafo.textContent = "Você clicou no botão!";
+      document.body.appendChild(paragrafo);
+    }
+
+    const removerParagrafos = () => {
+      let paragrafos = document.body.getElementsByTagName("p");
+      for (let index = 0; index < paragrafos.length; index++) {
+        console.table({
+          "index": index,
+          "elemento": paragrafos[index].nodeName
+        })
+        document.body.removeChild(paragrafos[index]);
+      }
+    }
+
+    const botaoAdd = document.getElementById("btn__add");
+    botaoAdd.addEventListener("click", criarParagrafo);
+
+    const butaoRemove = document.getElementById("btn__remove");
+    butaoRemove.addEventListener("click", removerParagrafos);
+  </script>
+
+</body>
+</html>
