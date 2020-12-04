@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usando jQuery UI: Página do Produto</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 1.2rem 3rem;
+      }
+
+      body > * {
+        margin: 1.5rem 0;
+      }
+
+      table {
+        font-size: 1em;
+      }
+
+      .ui-draggable,
+      .ui-droppable {
+        background-position: top;
+      }
+
+      .ui-autocomplete-category {
+        font-weight: bold;
+        padding: 0.2em 0.4em;
+        margin: 0.8em 0 0.2em;
+        line-height: 1.5;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+      const data = [
+        {
+          label: "Sacola Eco",
+          category: "Utensílios",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "Livro: Bernie Sanders",
+          category: "Livros",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "O Livro",
+          category: "Livros",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "Xbox Series X",
+          category: "Games",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "PlayStation 5",
+          category: "Games",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "Nintendo Switch",
+          category: "Games",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "Livro: A revolução dos bichos",
+          category: "Livros",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "BioS",
+          category: "Utensílios",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+        {
+          label: "Toalha Eco",
+          category: "Utensílios",
+          imageUrl: "http://lorempixel.com/320/240/technics",
+        },
+      ];
+
+      $(function () {
+        $.widget("custom.catcomplete", $.ui.autocomplete, {
+          _create: function () {
+            this._super();
+            this.widget().menu(
+              "option",
+              "items",
+              "> :not(.ui-autocomplete-category)"
+            );
+          },
+          _renderMenu: function (ul, items) {
+            var that = this,
+              currentCategory = "";
+            $.each(items, function (index, item) {
+              var li;
+              if (item.category != currentCategory) {
+                ul.append(
+                  "<li class='ui-autocomplete-category'>" +
+                    item.category +
+                    "</li>"
+                );
+                currentCategory = item.category;
+              }
+              li = that._renderItemData(ul, item);
+              if (item.category) {
+                li.attr("aria-label", item.category + " : " + item.label);
+              }
+            });
+          },
+        });
+      
+        let imageDiv = $(".product__image");
+        $("form").on("submit", function (event) {
+          event.preventDefault();
+          if ($("#search").val().length < 3) {
+            console.log("Input length < 3");
+            alterarNomeNasTabs();
+            imageDiv.children().each(function () {
+              this.remove();
+            });
+            imageDiv.css("display", "none");
+          } else {
+            let item = $("#search").val();
+            imageDiv.css("display", "inline");
+            alterarNomeNasTabs(item);
+            const urlProduto = retornarImagemDoProduto(item);
+            const imageUrl = `<img src="${urlProduto}" alt="${item}" />`;
+            imageDiv.append(imageUrl);
+            imageDiv.children().css("justify-content", "center");
+          }
+        });
+
+        $("#search").catcomplete({
+          delay: 0,
+          source: data,
+        });
+
+        $("#tabs").tabs({
+          event: "mouseover",
+        });
+      });
+
+      function retornarImagemDoProduto(productLabel = "") {
+        if (productLabel === "") return;
+        let resultado = data.filter((item) => {
+          return item.label === productLabel;
+        });
+        return resultado[0].imageUrl || "";
+      };
+
+      function alterarNomeNasTabs(productLabel = "") {
+        if (productLabel.length < 3) {
+          $(".product__name").each(function() {
+            this.remove();
+          });
+        } else {
+          const productName = `<h3 class="product__name">${productLabel}</h3>`;
+          $("#tabs-1").prepend(productName);
+          $("#tabs-2").prepend(productName);
+          $("#tabs-3").prepend(productName);
+        }
+      };
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Loja E=mc2</h1>
+      <div class="search-box">
+        <form method="get">
+          <label for="search">Procure pelo que deseja: </label>
+          <input id="search" type="text"/>
+          <input type="submit" value="Buscar" />
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <div class="product__image" style="display: none"></div>
+
+      <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">Informações</a></li>
+          <li><a href="#tabs-2">Especificações Técnicas</a></li>
+          <li><a href="#tabs-3">Dúvidas</a></li>
+        </ul>
+        <div id="tabs-1">
+          <p>
+            Halliday agora conta com videoaulas exclusivas e gratuitas como
+            material de apoio para os seus estudos!* Se a Física complicar,
+            descomplique! Sucesso há quase seis décadas, Fundamentos de Física,
+            de David Halliday, Robert Resnick e Jearl Walker, continua cumprindo
+            o desafio de apresentar a disciplina de maneira objetiva, unindo
+            teoria a aplicações práticas.
+          </p>
+        </div>
+        <div id="tabs-2">
+          <p>
+            Capa comum : 372 páginas ISBN-10 : 8521630352 ISBN-13 :
+            978-8521630357 Dimensões : 27.4 x 21 x 1.8 cm Editora : LTC; 10ª
+            edição (30 junho 2016) Idioma: : Português Ranking dos mais
+            vendidos: Nº 8,997 em Livros (Conheça o Top 100 na categoria Livros)
+            Nº 26 em Física
+          </p>
+        </div>
+        <div id="tabs-3">
+          <h4>Ótimo livro!</h4>
+          <span>Autor desconhecido</span>
+          <p>
+            O Halliday para muitos na universidade é um desafio, porém, quando
+            ele é lido com bastante atenção, os exercícios se tornam mais
+            óbvios, o que não é uma coisa ruim devido a organização desses, que
+            estão em diferentes níveis de dificuldade.
+          </p>
+          <h4>Boa didática</h4>
+          <span>Autora desconhecida</span>
+          <p>
+            É um livro claro em que os estudantes de exatas podem ter o primeiro
+            contato com a Física de forma bem didática. Estou estudando ele
+            nessas férias de julho para começar Física 1 no semestre que vem.
+            Com as aulas presenciais da Universidade o livro torna-se
+            indispensável para a concretização dos conteúdos. Recomendo!
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
